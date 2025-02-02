@@ -1,0 +1,13 @@
+The corrected CSS code uses CSS custom properties (variables) for proper referencing within the `content` property:
+
+```css
+:root {
+  --content: "This is some text";
+}
+
+.element::before {
+  content: var(--content);
+}
+```
+
+By defining `--content` in the `:root` selector, it becomes accessible throughout the stylesheet.  Using `var(--content)` correctly inserts the variable's value into the `content` property, ensuring the text is displayed as expected.
