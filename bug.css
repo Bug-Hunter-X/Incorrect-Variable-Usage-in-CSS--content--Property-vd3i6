@@ -1,0 +1,13 @@
+The following CSS code snippet demonstrates an uncommon error related to the `content` property within the `::before` and `::after` pseudo-elements.  The issue arises when attempting to use a variable within the `content` property that isn't properly defined or referenced. This results in unexpected behavior, often a blank or missing element, depending on the browser. 
+
+```css
+.element::before {
+  content: attr(data-content);
+}
+
+.element {
+  data-content: "This is some text";
+}
+```
+
+This might seem correct at first glance, but the variable `data-content` is not directly accessible using `attr()`.  The correct approach requires using a CSS custom property (or variable).
